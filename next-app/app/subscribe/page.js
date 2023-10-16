@@ -2,11 +2,11 @@ import React from "react"
 
 const Subscribe = () => {
     return(
-        <div className="container flex flex-col gap-4 mx-auto rounded-xl bg-white p-12 w-2/6 h-4/6">
+        <div className="container flex flex-col gap-4 rounded-xl mx-auto bg-white w-[400px] sm: p-12 h-5/3">
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              width="60"
-              height="60"
+              width="50"
+              height="50"
               viewBox="0 0 21 21"
             >
               <g fill="none">

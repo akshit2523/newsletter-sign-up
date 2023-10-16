@@ -1,12 +1,12 @@
 import React from "react";
 import Image from "next/image";
+import Link from "next/link";
 
 const page = () => {
   return (
-    <div className="container flex  mx-auto rounded-xl bg-white w-3/6 h-3/4">
-      <div className="mx-10 my-12 box-border w-1/2">
+    <div className="container flex  mx-auto rounded-xl bg-white w-[650px] h-3/4">
+      <div className="mx-10 my-12 box-border w-[50%] break-keep">
         <h1 className="font-extrabold text-[var(--Charcoal-Grey)] my-4 text-4xl">
-          {" "}
           Stay updated!
         </h1>
         <p>
@@ -14,10 +14,12 @@ const page = () => {
         </p>
         <div className="my-5">
           <div className="list-div">
+            <div>
             <svg
+              className="w-[21px]"
               xmlns="http://www.w3.org/2000/svg"
               width="21"
-              height="22"
+              height="21"
               viewBox="0 0 21 21"
             >
               <g fill="none">
@@ -29,13 +31,18 @@ const page = () => {
                 />
               </g>
             </svg>
+            </div>
+            <div>
             <p> Product discovery and building what matters</p>
+            </div>
           </div>
           <div className="list-div">
+            <div>
             <svg
+              className="w-[21px]"
               xmlns="http://www.w3.org/2000/svg"
               width="21"
-              height="22"
+              height="21"
               viewBox="0 0 21 21"
             >
               <g fill="none">
@@ -47,13 +54,18 @@ const page = () => {
                 />
               </g>
             </svg>
+            </div>
+            <div>
             <p>Measuring to ensure updates are a success</p>
+            </div>
           </div>
           <div className="list-div">
+            <div>
             <svg
+            className="w-[21px]"
               xmlns="http://www.w3.org/2000/svg"
               width="21"
-              height="22"
+              height="21"
               viewBox="0 0 21 21"
             >
               <g fill="none">
@@ -65,20 +77,21 @@ const page = () => {
                 />
               </g>
             </svg>
+            </div>
+            <div>
             <p> And much more!</p>
+            </div>
           </div>
         </div>
         <div className="w-full">
           <p className="font-semibold">Email address</p>
           <input className="border-2 rounded-md border-gray-400 w-full py-1 px-3 my-2" type="text" name="email" />
+          <Link href="/subscribe">
           <button className="rounded-md w-full bg-[var(--Dark-Slate-Grey)] hover:button-gradient text-white mt-5 px-4 py-3 text-sm">Subscribe to monthly newsletter</button>
+          </Link>
         </div>
       </div>
-      <div className="">
-      <Image src={'../public/illustration-sign-up-desktop.svg'} 
-      width={300}
-      height= {400}
-      alt="Follow us on Twitter" />
+      <div className="w-[50%] h-3/4">
       </div>
     </div>
   );

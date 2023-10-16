@@ -28,7 +28,7 @@ body {
 
 @layer components {
   .list-div {
-    @apply inline-flex items-center gap-4 mb-3 text-xs;
+    @apply inline-flex items-center gap-4 mb-3 text-xs whitespace-pre-line;
   }
 }
 @layer utilities {
@@ -40,3 +40,4 @@ body {
 p {
   font-size: 14px;
 }
+
