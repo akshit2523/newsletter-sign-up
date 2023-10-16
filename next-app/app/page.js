@@ -1,8 +1,9 @@
 import React from "react";
+import Image from "next/image";
 
 const page = () => {
   return (
-    <div className="container flex mx-auto rounded-xl bg-white w-3/6 h-3/4">
+    <div className="container flex  mx-auto rounded-xl bg-white w-3/6 h-3/4">
       <div className="mx-10 my-12 box-border w-1/2">
         <h1 className="font-extrabold text-[var(--Charcoal-Grey)] my-4 text-4xl">
           {" "}
@@ -16,7 +17,7 @@ const page = () => {
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="21"
-              height="21"
+              height="22"
               viewBox="0 0 21 21"
             >
               <g fill="none">
@@ -34,7 +35,7 @@ const page = () => {
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="21"
-              height="21"
+              height="22"
               viewBox="0 0 21 21"
             >
               <g fill="none">
@@ -52,7 +53,7 @@ const page = () => {
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="21"
-              height="21"
+              height="22"
               viewBox="0 0 21 21"
             >
               <g fill="none">
@@ -70,10 +71,15 @@ const page = () => {
         <div className="w-full">
           <p className="font-semibold">Email address</p>
           <input className="border-2 rounded-md border-gray-400 w-full py-1 px-3 my-2" type="text" name="email" />
-          <button className="rounded-md w-full bg-orange-500 mt-5 px-4 py-3 text-sm">Subscribe to monthly newsletter</button>
+          <button className="rounded-md w-full bg-[var(--Dark-Slate-Grey)] hover:button-gradient text-white mt-5 px-4 py-3 text-sm">Subscribe to monthly newsletter</button>
         </div>
       </div>
-      <div className=""></div>
+      <div className="">
+      <Image src={'../public/illustration-sign-up-desktop.svg'} 
+      width={300}
+      height= {400}
+      alt="Follow us on Twitter" />
+      </div>
     </div>
   );
 };
