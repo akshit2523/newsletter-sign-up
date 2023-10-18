@@ -1,10 +1,18 @@
-import React from "react";
-import Image from "next/image";
-import Link from "next/link";
-import mainImage from "../public/illustration-sign-up-desktop.svg";
-// import phoneImage from "../public/illustration-sign-up-mobile.svg"
+"use client";
 
-const page = () => {
+import React, { useState } from "react";
+import Image from "next/image";
+import mainImage from "../public/illustration-sign-up-desktop.svg";
+
+function page() {
+  const [email, setEmail] = useState([]);
+
+  function fetchEmail(e) {
+    setEmail(e.target.value);
+  }
+  
+  localStorage.setItem("email", email);
+  
   return (
     <div className="md:container flex sm:flex-row sm:m-auto flex-col-reverse box-border sm:rounded-xl m-0 bg-white sm:w-[100%] md:w-[728px] sm:h-[500px] w-full h-[100vh] rounded-none">
       <div className="md:mx-10 md:my-12  sm:w-[50%] break-keep sm:mx-5 sm:my-5 m-5">
@@ -83,25 +91,31 @@ const page = () => {
             </div>
           </div>
         </div>
-        <div className="w-full">
+        <form className="w-full" method="get" action="/subscribe">
           <p className="font-semibold">Email address</p>
           <input
             className="border-2 rounded-md border-gray-400 w-full py-1 px-3 my-2"
-            type="text"
-            name="email"
+            id="email"
+            type="email"
+            onChange={fetchEmail}
+            placeholder="Enter your email"
+            required="required"
+            pattern=".+@gmail\.com"
           />
-          <Link href="/subscribe">
-            <button className="rounded-md w-full bg-[var(--Dark-Slate-Grey)] hover:button-gradient text-white sm:mt-5 mt-3 px-4 py-3 text-sm">
-              Subscribe to monthly newsletter
-            </button>
-          </Link>
-        </div>
+
+              <button
+                id="submit"
+                className="rounded-md w-full bg-[var(--Dark-Slate-Grey)] hover:button-gradient text-white sm:mt-5 mt-3 px-4 py-3 text-sm"
+              >
+                Subscribe to monthly newsletter
+              </button>
+        </form>
       </div>
-      <div className="sm:w-[50%] aspect-square relative sm:h-fit sm:my-4 sm:mr-4">
-          <Image className="object-cover" src={mainImage} />
+      <div className="sm:w-[50%] sm:h-fit sm:my-4 sm:mr-4">
+        <Image src={mainImage} priority={true} alt="" />
       </div>
     </div>
   );
-};
+}
 
 export default page;

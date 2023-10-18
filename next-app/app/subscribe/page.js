@@ -1,7 +1,14 @@
-import React from "react";
+'use client'
 
-const Subscribe = () => {
+import React from "react";
+import Link from "next/link";
+
+function Subscribe ()  {
+
+  const fetchEmail = localStorage.getItem('email');
+
   return (
+
     <>
       <div className="container flex flex-col justify-center sm:rounded-xl mx-auto bg-white sm:w-[400px] sm:h-[460px] rounded-none w-full h-[100vh] break-keep sm:p-12 p-8 ">
         <div className="flex flex-col justify-center gap-4 bg-white w-full sm:h-auto h-[100vh] ">
@@ -21,22 +28,20 @@ const Subscribe = () => {
             </g>
           </svg>
           <p className="font-extrabold text-5xl text-[var(--Charcoal-Grey)] my-3">
-            {" "}
             Thanks for subscribing!
           </p>
           <h6>
-            {" "}
-            A confirmation email has been sent to <b>ash@loremcompany.com</b>.
+            A confirmation email has been sent to <b>{fetchEmail}</b>.
             Please open it and click the button inside to confirm your
             subscription.
           </h6>
         </div>
 
-        <div className="h-14">
+        <form className="h-14" method="get" action="/">
           <button className="w-full rounded-md bg-[var(--Dark-Slate-Grey)] align-bottom hover:button-gradient text-white sm:mt-5 py-2 px-4">
             Dismiss message
           </button>
-        </div>
+        </form>
       </div>
     </>
   );
